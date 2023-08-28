@@ -1,0 +1,97 @@
+.main-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+}
+.main-header-photo{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+.main-header-presentation{
+    text-align: center;
+    font-family: 'Neue Machina';
+}
+.main-header-address ol{
+    list-style-type: none;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0.2rem;
+    padding: 0;
+    text-align: left;
+}
+.ol-main-information{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+width: 100%;
+gap: 1rem;
+}
+
+.ol-main-information li::before{
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: .5rem;
+}
+.ol-main-information li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+}
+.ol-main-information .job::before{
+    background-image: url('/assets/img/personal.svg');
+}
+.ol-main-information .location::before{
+    background-image: url('/assets/img/location.svg');
+}
+.ol-main-information .phone::before{
+    background-image: url('/assets/img/phone.svg');
+}
+.ol-main-information .email::before{
+    background-image: url('/assets/img/email.svg');
+}
+
+.ol-main-information .phone a{
+    text-decoration: none;
+    color: white;
+}
+.ol-main-information .email a{
+    text-decoration: none;
+    color: white;
+}
+.ol-main-information .phone a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.ol-main-information .email a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .main-header{
+        display: grid;
+        grid-template-areas:
+        "photo title"
+        "photo information"
+        ;
+    }
+    .main-header .main-header-photo {
+        grid-area: photo;
+        margin: 0 auto;
+    }
+    .main-header .main-header-presentation{
+        grid-area: title;
+    }
+    .main-header .ol-main-information{
+        grid-area: information;
+    }
+}
